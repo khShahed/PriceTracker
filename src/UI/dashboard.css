@@ -1,0 +1,27 @@
+.chart{
+    -fx-background-color: black;
+}
+
+#productTableView{
+    -fx-background-color: linear-gradient(#25c481 0%, #25b7c4 50%, #25b7c4 90%);
+}
+#productTableView.cell:hover{
+    -fx-background-color: teal;
+}
+.chart-plot-background {
+    -fx-background-color: #575758;
+    -fx-foreground-color: white;
+    -fx-stroke: white;
+}
+
+.background {
+    -fx-background-color: #674A44;
+    -fx-foreground-color: #353434;
+}
+.button{
+
+}
+.menu-button:hover{
+    -fx-background-color: black;
+    -fx-foreground-color: white;
+}

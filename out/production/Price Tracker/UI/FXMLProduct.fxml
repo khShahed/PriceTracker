@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="565.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.FXMLProduct">
+   <children>
+      <Label layoutX="113.0" layoutY="69.0" text="Product Name" />
+      <Label layoutX="119.0" layoutY="116.0" text="Product URL" />
+      <Label layoutX="117.0" layoutY="160.0" text="Current Price" />
+      <JFXTextField fx:id="productNameTextBox" layoutX="219.0" layoutY="60.0" prefHeight="25.0" prefWidth="244.0" />
+      <JFXTextField fx:id="productUrlTextBox" layoutX="219.0" layoutY="109.0" prefHeight="25.0" prefWidth="244.0" />
+      <JFXTextField fx:id="currentPriceTextBox" layoutX="219.0" layoutY="152.0" prefHeight="25.0" prefWidth="244.0" />
+      <JFXButton fx:id="addButton" layoutX="199.0" layoutY="210.0" prefHeight="41.0" prefWidth="203.0" text="Add to My List">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>

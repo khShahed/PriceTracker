@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="dashboard" prefHeight="550.0" prefWidth="750.0" stylesheets="@dashboard.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.FXMLDashboardController">
+   <children>
+      <MenuBar layoutX="6.0" layoutY="8.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <menus>
+          <Menu fx:id="fileMenu" mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem fx:id="exitMenuItem" mnemonicParsing="false" text="Exit" />
+            </items>
+          </Menu>
+          <Menu fx:id="helpMenu" mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem fx:id="aboutMenuItem" mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="550.0" prefWidth="750.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <SplitPane dividerPositions="0.4785522788203753" layoutX="266.0" layoutY="50.0" prefHeight="259.0" prefWidth="748.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                           <children>
+                              <JFXButton fx:id="addButton" buttonType="RAISED" layoutX="100.0" layoutY="58.0" onAction="#onAddButtonClick" prefHeight="36.0" prefWidth="108.0" text="Add" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" />
+                              <JFXTextField fx:id="linkTextField" labelFloat="true" layoutX="14.0" layoutY="23.0" promptText="Enter Link Here" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0" />
+                              <Label fx:id="messageLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="163.0" layoutY="94.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                           <children>
+                              <TableView fx:id="productTableView" layoutX="32.0" layoutY="57.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="20.0">
+                                <columns>
+                                  <TableColumn fx:id="nameTableColumn" prefWidth="162.0" text="Name" />
+                                    <TableColumn fx:id="urlTableColumn" prefWidth="141.0" text="URL" />
+                                    <TableColumn fx:id="currentPriceTableColumn" prefWidth="82.0" text="Current Price" />
+                                </columns>
+                              </TableView>
+                              <Label alignment="CENTER" layoutX="18.0" layoutY="14.0" text="Products" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <SplitPane dividerPositions="0.3" layoutX="274.0" layoutY="14.0" prefHeight="258.0" prefWidth="748.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="256.0" prefWidth="252.0">
+                           <children>
+                              <Label alignment="CENTER" layoutX="60.0" layoutY="31.0" text="Product Price History - Table" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                              <TableView fx:id="priceHistroryTableView" layoutX="48.0" layoutY="28.0" prefHeight="256.0" prefWidth="295.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="22.0">
+                                <columns>
+                                  <TableColumn fx:id="dateTableColumn" maxWidth="132.0" prefWidth="132.0" text="Date" />
+                                  <TableColumn fx:id="priceTableColumn" prefWidth="162.0" text="Price" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                           <children>
+                              <Label alignment="CENTER" layoutX="63.0" layoutY="40.0" text="Product Price History - Graph" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                              <LineChart fx:id="priceLineChart" layoutX="-55.0" layoutY="-93.0" prefHeight="256.0" prefWidth="445.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="22.0">
+                                <xAxis>
+                                  <CategoryAxis side="BOTTOM" />
+                                </xAxis>
+                                <yAxis>
+                                  <NumberAxis side="LEFT" />
+                                </yAxis>
+                              </LineChart>
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
